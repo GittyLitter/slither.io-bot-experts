@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slither.io Bot for Experts
 // @namespace    http://slither.io/
-// @version      0.0.1
+// @version      0.0.2
 // @description  Slither.io bot
 // @author       GittyLitter
 // @match        http://slither.io/
