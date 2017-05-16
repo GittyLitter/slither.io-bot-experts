@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slither.io Bot for Experts
 // @namespace    http://slither.io/
-// @version      0.0.2
+// @version      0.0.3
 // @description  Slither.io bot
 // @author       GittyLitter
 // @match        http://slither.io/
@@ -46,6 +46,7 @@ var customBotOptions = {
     // you will lose your custom options
     // useDefaults: true
 };
+var consolePrevious = [];
 
 // Custom logging function - disabled by default
 window.log = function() {
@@ -53,7 +54,7 @@ window.log = function() {
         console.log.apply(console, arguments);
     }
     if (window.logOverlay) {
-        userInterface.updateLogOverlay(arguments);
+        userInterface.updateLogOverlay(console, arguments, consolePrevious);
     }
 };
 
@@ -1267,6 +1268,7 @@ var userInterface = window.userInterface = (function() {
             oContent.push(curDate.getHours + ':' + curDate.getMinutes + ':' + curDate.getSeconds + ' - ' + message);
             // separator
             userInterface.overlays.logOverlay.innerHTML = oContent.join('<br/>');
+            consolePrevious = oContent;
         },
 
         onPrefChange: function() {
@@ -1284,7 +1286,7 @@ var userInterface = window.userInterface = (function() {
             oContent.push('[G] leaderboard overlay: ' + ht(window.leaderboard));
             oContent.push('[Y] visual debugging: ' + ht(window.visualDebugging));
             oContent.push('[U] log debugging: ' + ht(window.logDebugging));
-            oContent.push('[J] log overlay: not working');
+            oContent.push('[J] log overlay: ' + ht(window.logOverlay));
             oContent.push('[H] overlays');
             oContent.push('[B] change background');
             oContent.push('[Mouse Wheel] zoom');
@@ -1421,6 +1423,7 @@ var userInterface = window.userInterface = (function() {
 
     // Load preferences
     userInterface.loadPreference('logDebugging', false);
+    userInterface.loadPreference('logOverlay', false);
     userInterface.loadPreference('visualDebugging', false);
     userInterface.loadPreference('autoRespawn', false);
     userInterface.loadPreference('mobileRender', false);
