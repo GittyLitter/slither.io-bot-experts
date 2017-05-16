@@ -1,15 +1,9 @@
-/*
-Copyright (c) 2016 Ermiya Eskandary & Théophile Cailliau and other contributors
-This Source Code Form is subject to the terms of the Mozilla Public
-License, v. 2.0. If a copy of the MPL was not distributed with this
-file, You can obtain one at http://mozilla.org/MPL/2.0/.
- */
 // ==UserScript==
-// @name         Slither.io-bot
+// @name         Slither.io Bot for Experts
 // @namespace    http://slither.io/
-// @version      1.2.9
+// @version      0.0.1
 // @description  Slither.io bot
-// @author       Ermiya Eskandary & Théophile Cailliau
+// @author       GittyLitter
 // @match        http://slither.io/
 // @grant        none
 // ==/UserScript==
