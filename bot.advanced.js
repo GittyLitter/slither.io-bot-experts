@@ -54,6 +54,7 @@ window.log = function() {
     }
     if (window.logOverlay) {
         userInterface.updateLogOverlay(arguments);
+    }
 };
 
 var canvasUtil = window.canvasUtil = (function() {
